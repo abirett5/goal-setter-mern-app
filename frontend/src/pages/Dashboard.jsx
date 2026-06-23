@@ -35,26 +35,33 @@ function Dashboard() {
   }
 
   return (
-    <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+    <div className="dashboard">
+      <section className="dashboard-header">
+        <h1>Welcome back, <span>{user && user.name}</span></h1>
+        <p>Track and manage your goals</p>
       </section>
-      
-      <GoalForm/>
 
-      <section className="content">
+      {/* Add Goal Form at Top */}
+      <div className="dashboard-form">
+        <GoalForm />
+      </div>
+
+      {/* Goals List Below */}
+      <section className="dashboard-content">
         {goals.length > 0 ? (
           <div className="goals">
             {goals.map((goal) => (
-              <GoalItem key={goal._id} goal={goal}/>
+              <GoalItem key={goal._id} goal={goal} />
             ))}
           </div>
         ) : (
-          <h3>You have not set any goals</h3>
+          <div className="empty-state">
+            <h3>No goals yet</h3>
+            <p>Create your first goal to get started 🚀</p>
+          </div>
         )}
       </section>
-    </>
+    </div>
   )
 }
 

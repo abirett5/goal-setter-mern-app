@@ -246,3 +246,216 @@ a {
     font-size: 1.8rem;
   }
 }
+
+/* ===============================
+   DASHBOARD LAYOUT
+================================ */
+.dashboard {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 30px rgba(79, 70, 229, 0.25);
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.dashboard-header span {
+  color: #fde68a;
+}
+
+.dashboard-header p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ===============================
+   ADD GOAL FORM CARD
+================================ */
+.dashboard-form {
+  background: var(--white);
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.5s ease;
+}
+
+/* ===============================
+   GOALS SECTION
+================================ */
+.dashboard-content {
+  margin-top: 1rem;
+}
+
+/* Goals Grid */
+.goals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===============================
+   GOAL CARD
+================================ */
+.goal {
+  background: var(--white);
+  padding: 1.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.goal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.goal h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.goal .date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Delete Button */
+.goal button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.goal button:hover {
+  transform: scale(1.15);
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+.empty-state {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px dashed var(--border);
+}
+
+.empty-state h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   RESPONSIVE DASHBOARD
+================================ */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.6rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-form {
+    padding: 1.5rem;
+  }
+}
+
+/* ===============================
+   ADD GOAL FORM STYLING
+================================ */
+.dashboard-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input Field */
+.dashboard-form input[type="text"],
+.dashboard-form textarea {
+  width: 100%;
+  margin-top: 16px;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.dashboard-form input::placeholder,
+.dashboard-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus State */
+.dashboard-form input:focus,
+.dashboard-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+/* Submit Button */
+.dashboard-form button {
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-form button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+}
+
+/* Button Active */
+.dashboard-form button:active {
+  transform: scale(0.98);
+}

@@ -57,7 +57,7 @@ a {
    HEADER / NAVBAR
 ====================== */
 .header {
-  background: var(--card);
+  background: var(--bg-light);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -418,7 +418,17 @@ a {
   }
 
   .dashboard-form {
-    padding: 1.5rem;
+    padding: 0;
+  }
+
+  section.form {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .dashboard-form {
+    padding: 1.8rem;
   }
 }
 
